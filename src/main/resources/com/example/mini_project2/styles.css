@@ -1,0 +1,41 @@
+#loginBtn {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+#loginBtn:hover {
+    -fx-background-color: rgba(93, 226, 210, 0.6);
+}
+#homeBtn1 {
+    -fx-background-color: white;
+    -fx-text-fill: #3f5166;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+#homeBtn1:hover {
+    -fx-background-color: rgba(83, 135, 163, 0.78);
+    -fx-text-fill: #ffffff;
+}
+#homeBtn2 {
+    -fx-background-color: white;
+    -fx-text-fill: #3f5166;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+#homeBtn2:hover {
+    -fx-background-color: rgba(83, 135, 163, 0.78);
+    -fx-text-fill: #ffffff;
+}
+#homeBtn3 {
+    -fx-background-color: white;
+    -fx-text-fill: #3f5166;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+#homeBtn3:hover {
+    -fx-background-color: rgba(83, 135, 163, 0.78);
+    -fx-text-fill: #ffffff;
+}
