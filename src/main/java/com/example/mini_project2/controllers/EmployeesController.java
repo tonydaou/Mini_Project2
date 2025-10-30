@@ -75,21 +75,15 @@ public class EmployeesController {
     public void initialize() {
         // fill dropdowns when page loads
         employeeRoleCmb.getItems().setAll(
-                "Manager",
-                "Staff",
-                "Admin",
-                "Intern",
-                "HR",
-                "IT Support"
+               "Team Leader",
+                "Collaborator",
+                "Instructor"
         );
 
         employeeDepartmentCmb.getItems().setAll(
-                "Finance",
+               "Computer Science",
                 "IT",
-                "HR",
-                "Sales",
-                "Marketing",
-                "Logistics"
+                "Other"
         );
 
         // bind table columns to Employee properties

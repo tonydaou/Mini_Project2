@@ -156,19 +156,35 @@
         <VBox prefWidth="700.0" VBox.vgrow="ALWAYS">
             <children>
 
-                <TableView fx:id="employeeTable" maxWidth="750.0" minWidth="740.0" prefHeight="500.0" prefWidth="740.0">
+                <VBox prefWidth="700.0" VBox.vgrow="ALWAYS">
+                    <children>
 
-                    <columns>
-                        <TableColumn fx:id="employeeFnameCol" prefWidth="100.0" text="First name" />
-                        <TableColumn fx:id="employeeLnameCol" prefWidth="100.0" text="Last name" />
-                        <TableColumn fx:id="employeeEmailCol" prefWidth="150.0" text="Email" />
-                        <TableColumn fx:id="employeeHireDateCol" prefWidth="100.0" text="Hire date" />
-                        <TableColumn fx:id="employeeRoleCol" prefWidth="80.0" text="Role" />
-                        <TableColumn fx:id="employeeDepartmentCol" prefWidth="120.0" text="Department" />
-                        <TableColumn fx:id="employeeSalaryCol" prefWidth="95.0" text="Salary" />
-                    </columns>
+                        <TableView fx:id="employeeTable"
+                                   prefHeight="500.0"
+                                   prefWidth="705.0"
+                                   minWidth="705.0"
+                                   maxWidth="705.0">
 
-                </TableView>
+
+                        <columns>
+                                <TableColumn fx:id="employeeFnameCol" prefWidth="80.0" text="First name" />
+                                <TableColumn fx:id="employeeLnameCol" prefWidth="80.0" text="Last name" />
+                                <TableColumn fx:id="employeeEmailCol" prefWidth="150.0" text="Email" />
+                                <TableColumn fx:id="employeeHireDateCol" prefWidth="100.0" text="Hire date" />
+                                <TableColumn fx:id="employeeRoleCol" prefWidth="80.0" text="Role" />
+                                <TableColumn fx:id="employeeDepartmentCol" prefWidth="120.0" text="Department" />
+                                <TableColumn fx:id="employeeSalaryCol" prefWidth="95.0" text="Salary" />
+                            </columns>
+
+                        </TableView>
+
+                    </children>
+
+                    <padding>
+                        <Insets bottom="10.0" left="0.0" right="10.0" top="10.0" />
+                    </padding>
+                </VBox>
+
 
 
             </children>

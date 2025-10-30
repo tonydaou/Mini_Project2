@@ -12,31 +12,40 @@ public class EmployeeStore {
     public EmployeeStore() {
         this.employees.addAll(
                 new Employee(
-                        "Maya",
-                        "Haddad",
-                        "maya@company.com",
+                        "Tony",
+                        "Daou",
+                        "tony.n.daou@net.edu.lb",
                         LocalDate.of(2024, 3, 10),
-                        "Manager",
-                        "Finance",
+                        "Team Leader",
+                        "Computer Science",
                         3200
                 ),
                 new Employee(
                         "Joe",
-                        "Nassar",
-                        "joe@company.com",
+                        "Fakhry",
+                        "joe.fakhry@net.usek.edu.lb",
                         LocalDate.of(2023, 11, 2),
-                        "Staff",
+                        "Collaborator",
                         "IT",
                         1800
                 ),
                 new Employee(
                         "Louis",
-                        "Fares",
-                        "louis@company.com",
+                        "Tawk",
+                        "louis.louis@net.usek.edu.lb",
                         LocalDate.of(2022, 7, 1),
-                        "Admin",
-                        "HR",
+                        "Collaborator",
+                        "Computer Science",
                         2500
+                ),
+                new Employee(
+                        "Ali",
+                        "Rachini",
+                        "ali.rachini@net.usek.edu.lb",
+                        LocalDate.of(2018, 7, 1),
+                        "Instructor",
+                        "Computer Science",
+                        4500
                 )
         );
     }
