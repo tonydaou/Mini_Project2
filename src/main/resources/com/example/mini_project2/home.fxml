@@ -13,7 +13,7 @@
     <children>
         <AnchorPane layoutY="-1.0" prefHeight="400.0" prefWidth="600.0">
             <children>
-                <Pane layoutX="182.0" prefHeight="410.0" prefWidth="419.0" style="-fx-background-color: #3f5166;">
+                <Pane layoutX="182.0" prefHeight="410.0" prefWidth="419.0" style="-fx-background-color: #3f5166;" stylesheets="@styles.css">
                     <children>
                         <Label layoutX="134.0" layoutY="31.0" text="Welcome!" textFill="WHITE">
                             <font>
