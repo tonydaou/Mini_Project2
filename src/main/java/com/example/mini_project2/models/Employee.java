@@ -11,27 +11,19 @@ public class Employee {
     private final ObjectProperty<LocalDate> hireDate;
     private final StringProperty role;
     private final StringProperty department;
-    private final IntegerProperty salary; // int now
+    private final IntegerProperty salary;
 
-    public Employee(
-            String fname,
-            String lname,
-            String email,
-            LocalDate hireDate,
-            String role,
-            String department,
-            int salary
-    ) {
+    public Employee(String fname, String lname, String email, LocalDate hireDate, String role, String department, int salary) {
         this.fname = new SimpleStringProperty(fname);
         this.lname = new SimpleStringProperty(lname);
         this.email = new SimpleStringProperty(email);
         this.hireDate = new SimpleObjectProperty<>(hireDate);
         this.role = new SimpleStringProperty(role);
         this.department = new SimpleStringProperty(department);
-        this.salary = new SimpleIntegerProperty(salary); // int property
+        this.salary = new SimpleIntegerProperty(salary);
     }
 
-    // First name
+
     public String getFname() {
         return fname.get();
     }
@@ -42,7 +34,7 @@ public class Employee {
         return fname;
     }
 
-    // Last name
+
     public String getLname() {
         return lname.get();
     }
@@ -53,7 +45,7 @@ public class Employee {
         return lname;
     }
 
-    // Email
+
     public String getEmail() {
         return email.get();
     }
@@ -64,7 +56,7 @@ public class Employee {
         return email;
     }
 
-    // Hire date
+
     public LocalDate getHireDate() {
         return hireDate.get();
     }
@@ -75,7 +67,7 @@ public class Employee {
         return hireDate;
     }
 
-    // Role
+
     public String getRole() {
         return role.get();
     }
@@ -86,7 +78,7 @@ public class Employee {
         return role;
     }
 
-    // Department
+
     public String getDepartment() {
         return department.get();
     }
@@ -97,7 +89,7 @@ public class Employee {
         return department;
     }
 
-    // Salary (int)
+
     public int getSalary() {
         return salary.get();
     }

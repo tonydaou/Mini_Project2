@@ -18,11 +18,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox spacing="30.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mini_project2.controllers.EmployeesController">
+<HBox spacing="30.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mini_project2.controllers.EmployeesController">
 
     <children>
 
-        <VBox prefHeight="572.0" prefWidth="306.0" spacing="10.0">
+        <VBox prefHeight="572.0" prefWidth="306.0" spacing="10.0" style="-fx-background-color: light-blue;">
             <children>
 
                 <Label alignment="CENTER" prefWidth="340.0" style="-fx-text-fill: #1a3b8a;" text="Employees">
@@ -159,11 +159,7 @@
                 <VBox prefWidth="700.0" VBox.vgrow="ALWAYS">
                     <children>
 
-                        <TableView fx:id="employeeTable"
-                                   prefHeight="500.0"
-                                   prefWidth="705.0"
-                                   minWidth="705.0"
-                                   maxWidth="705.0">
+                        <TableView fx:id="employeeTable" maxWidth="705.0" minWidth="705.0" prefHeight="500.0" prefWidth="705.0">
 
 
                         <columns>

@@ -36,7 +36,9 @@ public class LoginController {
             openHomePage("Joe");
         } else if (email.equals("Louis") && password.equals("Louis123")) {
             openHomePage("Louis");
-        } else {
+        } else if (email.equals("Teddy") && password.equals("Teddy123")) {
+            openHomePage("Teddy");
+        }else {
             errorText.setText("Incorrect username or password.");
         }
     }

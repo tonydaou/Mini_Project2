@@ -12,7 +12,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.time.LocalDate;
 
@@ -73,20 +72,21 @@ public class EmployeesController {
 
     @FXML
     public void initialize() {
-        // fill dropdowns when page loads
+
+
         employeeRoleCmb.getItems().setAll(
-               "Team Leader",
+                "Team Leader",
                 "Collaborator",
                 "Instructor"
         );
 
         employeeDepartmentCmb.getItems().setAll(
-               "Computer Science",
+                "Computer Science",
                 "IT",
                 "Other"
         );
 
-        // bind table columns to Employee properties
+
         employeeFnameCol.setCellValueFactory(new PropertyValueFactory<>("fname"));
         employeeLnameCol.setCellValueFactory(new PropertyValueFactory<>("lname"));
         employeeEmailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
@@ -95,11 +95,10 @@ public class EmployeesController {
         employeeDepartmentCol.setCellValueFactory(new PropertyValueFactory<>("department"));
         employeeSalaryCol.setCellValueFactory(new PropertyValueFactory<>("salary"));
 
-        // attach data store to table
-        ObservableList<Employee> allEmployees = employeeStore.getEmployeesList();
-        employeeTable.setItems(allEmployees);
 
-        // when selecting a row, show data in the form
+        employeeTable.setItems(employeeStore.getEmployeesList());
+
+
         employeeTable.getSelectionModel().selectedItemProperty().addListener(evt -> {
             Employee selected = employeeTable.getSelectionModel().getSelectedItem();
             if (selected != null) {
@@ -109,22 +108,22 @@ public class EmployeesController {
                 employeeHireDatePicker.setValue(selected.getHireDate());
                 employeeRoleCmb.setValue(selected.getRole());
                 employeeDepartmentCmb.setValue(selected.getDepartment());
-                employeeSalarySlider.setValue(selected.getSalary()); // int -> slider double ok
+                employeeSalarySlider.setValue(selected.getSalary());
                 employeeSalaryValueLbl.setText(Integer.toString(selected.getSalary()));
             }
         });
 
-        // sync salary label with slider
+
         employeeSalarySlider.valueProperty().addListener((obs, oldVal, newVal) -> {
             int salaryInt = newVal.intValue();
             employeeSalaryValueLbl.setText(Integer.toString(salaryInt));
         });
     }
 
+
     @FXML
     void addEmployee(ActionEvent event) {
-        // simple validation style:
-        // if ANY required field is missing -> show one generic error message
+
         if (isAnyRequiredFieldMissing()) {
             employeeErrorLbl.setText("Please fill in all required fields.");
             return;
@@ -150,7 +149,6 @@ public class EmployeesController {
 
         employeeStore.addEmployee(e);
 
-        // clear form
         employeeFnameFld.setText("");
         employeeLnameFld.setText("");
         employeeEmailFld.setText("");
@@ -167,11 +165,10 @@ public class EmployeesController {
     void updateEmployee(ActionEvent event) {
         Employee selected = employeeTable.getSelectionModel().getSelectedItem();
         if (selected == null) {
-            // no row selected, do nothing (you could also show a message if you want)
             return;
         }
 
-        // same validation rule: if anything is blank -> stop and show generic message
+
         if (isAnyRequiredFieldMissing()) {
             employeeErrorLbl.setText("Please fill in all required fields.");
             return;
@@ -236,8 +233,6 @@ public class EmployeesController {
 
         if (employeeDepartmentCmb.getValue() == null || employeeDepartmentCmb.getValue().isEmpty())
             return true;
-
-        // salary can be zero, that's allowed, so we don't block for that
 
         return false;
     }

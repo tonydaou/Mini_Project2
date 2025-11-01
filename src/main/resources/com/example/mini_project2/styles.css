@@ -39,3 +39,15 @@
     -fx-background-color: rgba(83, 135, 163, 0.78);
     -fx-text-fill: #ffffff;
 }
+
+#productsBtn {
+    -fx-background-color: white;
+    -fx-text-fill: #3f5166;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+#productsBtn:hover {
+    -fx-background-color: rgba(83, 135, 163, 0.78);
+    -fx-text-fill: #ffffff;
+}
