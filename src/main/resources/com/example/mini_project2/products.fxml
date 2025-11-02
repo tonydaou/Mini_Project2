@@ -1,14 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.mini_project2.controllers.ProductsController"
-            prefHeight="400.0" prefWidth="600.0">
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.mini_project2.controllers.ProductsController" spacing="15">
 
-</AnchorPane>
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <!-- Left side form -->
+    <VBox spacing="8" prefWidth="270">
+        <Label text="Add / Edit Product" style="-fx-font-size: 18; -fx-text-fill: #1a3b8a;"/>
+        <TextField fx:id="nameField" promptText="Product Name"/>
+        <TextField fx:id="brandField" promptText="Brand"/>
+        <ComboBox fx:id="categoryComboBox" promptText="Select Category"/>
+        <TextField fx:id="descriptionField" promptText="Description"/>
+        <TextField fx:id="quantityField" promptText="Quantity"/>
+        <TextField fx:id="stockField" promptText="Stock"/>
+
+        <HBox spacing="5">
+            <Label text="Price:"/>
+            <Slider fx:id="priceSlider" min="0" max="2000" value="0" blockIncrement="10"/>
+            <Label fx:id="priceLabel" text="0.00"/>
+        </HBox>
+
+        <Button text="Choose Image" onAction="#chooseImage" style="-fx-background-color: #5555ff; -fx-text-fill: white;"/>
+
+        <HBox spacing="8">
+            <Button text="Add" onAction="#addProduct" style="-fx-background-color: green; -fx-text-fill: white;"/>
+            <Button text="Update" onAction="#updateProduct" style="-fx-background-color: orange; -fx-text-fill: white;"/>
+        </HBox>
+
+        <HBox spacing="8">
+            <Button text="Delete" onAction="#deleteProduct" style="-fx-background-color: red; -fx-text-fill: white;"/>
+            <Button text="Home" onAction="#backToHome" style="-fx-background-color: blue; -fx-text-fill: white;"/>
+        </HBox>
+
+        <Label fx:id="errorLabel" textFill="red"/>
+    </VBox>
+
+    <!-- Middle image display -->
+    <VBox alignment="CENTER" spacing="10" prefWidth="300">
+        <Label text="Product Image" style="-fx-font-size: 16; -fx-text-fill: #3f5166;"/>
+        <ImageView fx:id="productImageView" fitWidth="250" fitHeight="250" preserveRatio="true"
+                   style="-fx-border-color: #3f5166; -fx-border-width: 2;"/>
+    </VBox>
+
+    <!-- Right table -->
+    <VBox prefWidth="500" VBox.vgrow="ALWAYS">
+        <Label text="Product List" style="-fx-font-size: 18; -fx-text-fill: #1a3b8a;"/>
+        <TableView fx:id="productTable" prefHeight="400" prefWidth="480">
+            <columns>
+                <TableColumn fx:id="nameCol" text="Name" prefWidth="90"/>
+                <TableColumn fx:id="brandCol" text="Brand" prefWidth="90"/>
+                <TableColumn fx:id="categoryCol" text="Category" prefWidth="100"/>
+                <TableColumn fx:id="descriptionCol" text="Description" prefWidth="120"/>
+                <TableColumn fx:id="quantityCol" text="Qty" prefWidth="60"/>
+                <TableColumn fx:id="stockCol" text="Stock" prefWidth="60"/>
+                <TableColumn fx:id="priceCol" text="Price ($)" prefWidth="80"/>
+            </columns>
+        </TableView>
+    </VBox>
+</HBox>
