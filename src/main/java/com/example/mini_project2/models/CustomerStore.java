@@ -4,12 +4,14 @@ import com.example.mini_project2.Customer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.time.LocalDate;
+
 public class CustomerStore {
 
     private final ObservableList<Customer> customers = FXCollections.observableArrayList();
 
     public CustomerStore() {
-        this.customers.addAll(new Customer[]{new Customer("Louis", 21, "usek", "single")});
+        this.customers.addAll(new Customer[]{new Customer("Louis", 21, "usek", "single", LocalDate.of(2003, 1, 1), "03-123456")});
     }
 
     public ObservableList<Customer> getCustomersList() {
@@ -30,12 +32,14 @@ public class CustomerStore {
 
     }
 
-    public void updateCustomer(Customer Customer, String name, Integer age, String address, String status) {
+    public void updateCustomer(Customer Customer, String name, Integer age, String address, String status, java.time.LocalDate dateOfBirth, String phoneNumber) {
         if (Customer != null) {
             Customer.setName(name);
             Customer.setAge(age);
             Customer.setAddress(address);
             Customer.setStatus(status);
+            Customer.setDateOfBirth(dateOfBirth);
+            Customer.setPhoneNumber(phoneNumber);
         }
 
     }

@@ -5,8 +5,16 @@ import com.example.mini_project2.models.CustomerStore;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.time.LocalDate;
 
 public class CustomerController {
 
@@ -43,6 +51,14 @@ public class CustomerController {
     private Button updateBtn;
     @FXML
     private Label errorMsg;
+    @FXML
+    private DatePicker dateOfBirthPicker;
+    @FXML
+    private TextField phoneNumberFld;
+    @FXML
+    private TableColumn<Customer, LocalDate> dateOfBirthCol;
+    @FXML
+    private TableColumn<Customer, String> phoneNumberCol;
     private final CustomerStore Customerstore = new CustomerStore();
 
     @FXML
@@ -51,6 +67,8 @@ public class CustomerController {
         this.ageCol.setCellValueFactory(new PropertyValueFactory("age"));
         this.addressCol.setCellValueFactory(new PropertyValueFactory("address"));
         this.statusCol.setCellValueFactory(new PropertyValueFactory("status"));
+        this.dateOfBirthCol.setCellValueFactory(new PropertyValueFactory("dateOfBirth"));
+        this.phoneNumberCol.setCellValueFactory(new PropertyValueFactory("phoneNumber"));
         this.statusGroup = new ToggleGroup();
         this.c1.setToggleGroup(this.statusGroup);
         this.c2.setToggleGroup(this.statusGroup);
@@ -63,6 +81,8 @@ public class CustomerController {
                 this.nameFld.setText(selectedcustomer.getName());
                 this.ageFld.setText(Integer.toString(selectedcustomer.getAge()));
                 this.addressFld.setText(selectedcustomer.getAddress());
+                this.dateOfBirthPicker.setValue(selectedcustomer.getDateOfBirth());
+                this.phoneNumberFld.setText(selectedcustomer.getPhoneNumber());
                 this.setStatusRadioButton(selectedcustomer.getStatus());
             }
 
@@ -120,11 +140,25 @@ public class CustomerController {
             isValid = false;
         }
 
+        LocalDate dateOfBirth = this.dateOfBirthPicker.getValue();
+        if (dateOfBirth == null) {
+            error = error + "Error: Date of Birth is required\n";
+            isValid = false;
+        }
+
+        String phoneNumber = this.phoneNumberFld.getText();
+        if (phoneNumber.isEmpty()) {
+            error = error + "Error: Phone Number is required\n";
+            isValid = false;
+        }
+
         if (isValid) {
-            this.Customerstore.addCustomer(new Customer(name, age, address, status));
+            this.Customerstore.addCustomer(new Customer(name, age, address, status, dateOfBirth, phoneNumber));
             this.nameFld.setText("");
             this.ageFld.setText("");
             this.addressFld.setText("");
+            this.dateOfBirthPicker.setValue(null);
+            this.phoneNumberFld.setText("");
             this.errorMsg.setText("");
         } else {
             this.errorMsg.setText(error);
@@ -178,8 +212,20 @@ public class CustomerController {
                 isValid = false;
             }
 
+            LocalDate dateOfBirth = this.dateOfBirthPicker.getValue();
+            if (dateOfBirth == null) {
+                error = error + "Error: Date of Birth is required!\n";
+                isValid = false;
+            }
+
+            String phoneNumber = this.phoneNumberFld.getText();
+            if (phoneNumber.isEmpty()) {
+                error = error + "Error: Phone Number is required!\n";
+                isValid = false;
+            }
+
             if (isValid) {
-                this.Customerstore.updateCustomer(selectedcustomer, name, age, address, status);
+                this.Customerstore.updateCustomer(selectedcustomer, name, age, address, status, dateOfBirth, phoneNumber);
                 this.personsTable.refresh();
                 this.errorMsg.setText("");
             } else {
@@ -187,6 +233,19 @@ public class CustomerController {
             }
         }
 
+    }
+
+    @FXML
+    void backToHome(ActionEvent event) throws IOException {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/mini_project2/home.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Home");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 

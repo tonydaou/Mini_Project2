@@ -2,6 +2,7 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
@@ -24,7 +25,7 @@
         </font>
     </Label>
 
-    <GridPane hgap="10" layoutX="20" layoutY="71.0" prefHeight="193.0" prefWidth="382.0" vgap="10">
+    <GridPane hgap="10" layoutX="20" layoutY="71.0" prefHeight="250.0" prefWidth="382.0" vgap="10">
         <Label prefHeight="18.0" prefWidth="133.0" text="Customer Name:" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="0">
             <font>
                 <Font name="Arial Bold" size="15.0" />
@@ -41,6 +42,14 @@
             <font>
                 <Font name="Arial Bold" size="15.0" />
             </font></Label>
+        <Label text="Date of Birth:" textFill="WHITE" GridPane.rowIndex="6">
+            <font>
+                <Font name="Arial Bold" size="15.0" />
+            </font></Label>
+        <Label text="Phone Number:" textFill="WHITE" GridPane.rowIndex="8">
+            <font>
+                <Font name="Arial Bold" size="15.0" />
+            </font></Label>
         <Label text="Status:" textFill="WHITE" GridPane.rowIndex="5">
             <font>
                 <Font name="Arial Bold" size="15.0" />
@@ -51,6 +60,8 @@
             <RadioButton fx:id="c3" prefHeight="18.0" prefWidth="113.0" text="divorced" />
         </HBox>
         <TextField fx:id="addressFld" prefHeight="24.0" prefWidth="194.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+        <DatePicker fx:id="dateOfBirthPicker" prefHeight="24.0" prefWidth="194.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+        <TextField fx:id="phoneNumberFld" prefHeight="24.0" prefWidth="194.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
         <columnConstraints>
             <ColumnConstraints />
             <ColumnConstraints />
@@ -63,27 +74,32 @@
             <RowConstraints />
             <RowConstraints />
             <RowConstraints maxHeight="21.599999999999994" minHeight="21.599999999999994" prefHeight="21.599999999999994" />
-            <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
         </rowConstraints>
 
 
     </GridPane>
 
-    <TableView fx:id="personsTable" layoutY="312.0" prefHeight="292.0" prefWidth="811.0">
+    <TableView fx:id="personsTable" layoutY="380.0" prefHeight="224.0" prefWidth="811.0">
         <columns>
-            <TableColumn fx:id="nameCol" prefWidth="206.40003049373627" text="Customer Name" />
-            <TableColumn fx:id="ageCol" prefWidth="172.79998779296875" text="age" />
-            <TableColumn fx:id="addressCol" prefWidth="223.99996948242188" text="address" />
-            <TableColumn fx:id="statusCol" prefWidth="208.0" text="Status" />
+            <TableColumn fx:id="nameCol" prefWidth="135.0" text="Customer Name" />
+            <TableColumn fx:id="ageCol" prefWidth="85.0" text="Age" />
+            <TableColumn fx:id="addressCol" prefWidth="150.0" text="Address" />
+            <TableColumn fx:id="dateOfBirthCol" prefWidth="120.0" text="Date of Birth" />
+            <TableColumn fx:id="phoneNumberCol" prefWidth="120.0" text="Phone Number" />
+            <TableColumn fx:id="statusCol" prefWidth="100.0" text="Status" />
         </columns>
     </TableView>
 
-    <Button fx:id="addBtn" layoutX="168.0" layoutY="257.0" onAction="#addPerson" style="-fx-background-color: #1d4e89;" text="Submit" textFill="WHITE" />
-    <Button fx:id="updateBtn" layoutX="246.0" layoutY="257.0" onAction="#updatePerson" style="-fx-background-color: #4CAF50;" text="Update" textFill="WHITE" />
-    <Button fx:id="deleteBtn" layoutX="323.0" layoutY="257.0" onAction="#deletePerson" style="-fx-background-color: #8e0404;" text="Delete" textFill="WHITE">
+    <Button fx:id="addBtn" layoutX="168.0" layoutY="330.0" onAction="#addPerson" style="-fx-background-color: #1d4e89;" text="Submit" textFill="WHITE" />
+    <Button fx:id="updateBtn" layoutX="246.0" layoutY="330.0" onAction="#updatePerson" style="-fx-background-color: #4CAF50;" text="Update" textFill="WHITE" />
+    <Button fx:id="deleteBtn" layoutX="323.0" layoutY="330.0" onAction="#deletePerson" style="-fx-background-color: #8e0404;" text="Delete" textFill="WHITE">
         <cursor>
             <Cursor fx:constant="OPEN_HAND" />
         </cursor></Button>
+    <Button layoutX="400.0" layoutY="330.0" onAction="#backToHome" style="-fx-background-color: blue; -fx-text-fill: white;" text="Home" />
     <ImageView fitHeight="124.0" fitWidth="134.0" layoutX="524.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
         <image>
             <Image url="@images/office-man.png" />
