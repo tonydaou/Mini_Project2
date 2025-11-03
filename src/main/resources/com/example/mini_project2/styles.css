@@ -6,36 +6,48 @@
 #loginBtn:hover {
     -fx-background-color: rgba(93, 226, 210, 0.6);
 }
-#homeBtn1 {
+#employeesBtn {
     -fx-background-color: white;
     -fx-text-fill: #3f5166;
     -fx-font-weight: bold;
     -fx-cursor: hand;
 }
 
-#homeBtn1:hover {
+#employeesBtn:hover {
     -fx-background-color: rgba(83, 135, 163, 0.78);
     -fx-text-fill: #ffffff;
 }
-#homeBtn2 {
+#customersBtn {
     -fx-background-color: white;
     -fx-text-fill: #3f5166;
     -fx-font-weight: bold;
     -fx-cursor: hand;
 }
 
-#homeBtn2:hover {
+#customersBtn:hover {
     -fx-background-color: rgba(83, 135, 163, 0.78);
     -fx-text-fill: #ffffff;
 }
-#homeBtn3 {
+#ordersBtn {
     -fx-background-color: white;
     -fx-text-fill: #3f5166;
     -fx-font-weight: bold;
     -fx-cursor: hand;
 }
 
-#homeBtn3:hover {
+#ordersBtn:hover {
+    -fx-background-color: rgba(83, 135, 163, 0.78);
+    -fx-text-fill: #ffffff;
+}
+
+#productsBtn {
+    -fx-background-color: white;
+    -fx-text-fill: #3f5166;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+#productsBtn:hover {
     -fx-background-color: rgba(83, 135, 163, 0.78);
     -fx-text-fill: #ffffff;
 }

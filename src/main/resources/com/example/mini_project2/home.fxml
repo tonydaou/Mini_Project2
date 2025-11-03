@@ -13,7 +13,7 @@
     <children>
         <AnchorPane layoutY="-1.0" prefHeight="400.0" prefWidth="600.0">
             <children>
-                <Pane layoutX="182.0" prefHeight="410.0" prefWidth="419.0" style="-fx-background-color: #3f5166;">
+                <Pane layoutX="182.0" prefHeight="410.0" prefWidth="419.0" style="-fx-background-color: #3f5166;" stylesheets="@styles.css">
                     <children>
                         <Label layoutX="134.0" layoutY="31.0" text="Welcome!" textFill="WHITE">
                             <font>
@@ -23,6 +23,8 @@
                         <Button fx:id="employeesBtn" layoutX="139.0" layoutY="130.0" mnemonicParsing="false" onAction="#openEmployees" prefHeight="25.0" prefWidth="141.0" stylesheets="@styles.css" text="Employees" />
                         <Button fx:id="ordersBtn" layoutX="139.0" layoutY="231.0" mnemonicParsing="false" onAction="#openOrders" prefHeight="25.0" prefWidth="141.0" stylesheets="@styles.css" text="Orders" />
                         <Button fx:id="customersBtn" layoutX="139.0" layoutY="180.0" mnemonicParsing="false" onAction="#openCustomers" prefHeight="25.0" prefWidth="141.0" stylesheets="@styles.css" text="Customers" />
+                  <Button fx:id="productsBtn" layoutX="139.0" layoutY="278.0" mnemonicParsing="false" onAction="#openProducts" prefHeight="25.0" prefWidth="141.0" stylesheets="@styles.css" text="Products" />
+                        
                     </children>
                 </Pane>
                 <ImageView fitHeight="150.0" fitWidth="186.0" layoutX="14.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">

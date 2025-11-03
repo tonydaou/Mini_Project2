@@ -26,7 +26,7 @@
                 <TextField fx:id="emailField" layoutX="213.0" layoutY="193.0" prefHeight="26.0" prefWidth="174.0" promptText="Username" />
                 <Label layoutX="129.0" layoutY="193.0" text="Username">
                     <font>
-                        <Font size="17.0" />
+                        <Font name="Arial" size="17.0" />
                     </font>
                 </Label>
 

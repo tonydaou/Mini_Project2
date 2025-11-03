@@ -38,11 +38,20 @@ public class HomeController {
 
     @FXML
     private void openOrders(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/com/example/min_project2/orders.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/com/example/mini_project2/orders.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Orders Page");
+        stage.show();
+    }
+    @FXML
+    private void openProducts(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/com/example/mini_project2/products.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Products Page");
         stage.show();
     }
 }

@@ -3,9 +3,10 @@ module com.example.mini_project2 {
     requires javafx.fxml;
     requires javafx.base;
 
-    opens com.example.mini_project2 to javafx.graphics;
-    opens com.example.mini_project2.controllers to javafx.fxml;
-
     exports com.example.mini_project2;
     exports com.example.mini_project2.controllers;
+    exports com.example.mini_project2.models;
+
+    opens com.example.mini_project2.controllers to javafx.fxml;
+    opens com.example.mini_project2.models to javafx.fxml;
 }
