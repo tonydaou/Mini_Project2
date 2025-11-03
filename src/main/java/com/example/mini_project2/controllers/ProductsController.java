@@ -5,11 +5,18 @@ import com.example.mini_project2.models.ProductStore;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
 import java.io.File;
+import java.io.IOException;
 
 public class ProductsController {
 
@@ -125,9 +132,14 @@ public class ProductsController {
     }
 
     @FXML
-    void backToHome(ActionEvent event) {
-        System.out.println("Return to Home Screen...");
+    void backToHome(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/mini_project2/home.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Home");
+        stage.show();
     }
+
 
     private void clearFields() {
         nameField.clear();
